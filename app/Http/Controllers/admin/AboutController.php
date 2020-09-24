@@ -37,11 +37,6 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         $this->validate($request ,[
-            'title_ge' => 'required|string',
-            'title_en' => 'required|string',
-
-            'desc_ge' => 'required|string',
-            'desc_en' => 'required|string',
 
             'name_ge' => 'required|string',
             'name_en' => 'required|string',
@@ -62,12 +57,6 @@ class AboutController extends Controller
         ]);
 
         $about = new About;
-
-        $about->title_ge = $request->title_ge;
-        $about->title_en = $request->title_en;
-
-        $about->desc_ge = $request->desc_ge;
-        $about->desc_en = $request->desc_en;
 
         $about->name_ge = $request->name_ge;
         $about->name_en = $request->name_en;
@@ -130,30 +119,23 @@ class AboutController extends Controller
         $about = About::find($id);
 
         $this->validate($request ,[
-            'title_ge' => 'required|string',
-            'title_en' => 'required|string',
-            'desc_ge' => 'required|string',
-            'desc_en' => 'required|string',
             'name_ge' => 'required|string',
             'name_en' => 'required|string',
+
             'gender_ge' => 'required|string',
             'gender_en' => 'required|string',
+
             'birth_date_ge' => 'required|date',
             'birth_date_en' => 'required|date',
+
             'nationality_ge' => 'required|string',
             'nationality_en' => 'required|string',
+            
             'email' => 'required|email',
             'phone_number' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
         ]);
-
-        
-        $about->title_ge = $request->title_ge;
-        $about->title_en = $request->title_en;
-
-        $about->desc_ge = $request->desc_ge;
-        $about->desc_en = $request->desc_en;
 
         $about->name_ge = $request->name_ge;
         $about->name_en = $request->name_en;

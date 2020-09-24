@@ -20,7 +20,7 @@ class CreateWorksTable extends Migration
             $table->string('work_en');
 
             $table->string('image');
-            $table->string('bg_img')->nullable();
+
 
             $table->timestamps();
         });

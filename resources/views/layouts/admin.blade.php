@@ -41,7 +41,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('home', app()->getLocale()) }}" class="nav-link">Home</a>
+                    <a href="{{ route('home',['locale' => app()->getLocale()]) }}" class="nav-link">Home</a>
                 </li>
 
             </ul>
@@ -74,9 +74,7 @@
                                 <li class="nav-item has-treeview">
                                     <a href="#" class="nav-link">
                                         <i class="nav-icon fas fa-circle"></i>
-                                        @if(empty(Auth::user()->name)){{  redirect()-route('home') }}
-                                        @else {{ Auth::user()->name }}
-                                        @endif
+                                        {{ Auth::user()->name }}
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">

@@ -1,42 +1,21 @@
 @extends('layouts.front')
 
 @section('content')
-<!--
-@if(request()->has('#success'))
-<div class="card rounded-sm dark" style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.3)), url('https://source.unsplash.com/4qSb_FWhHKs') no-repeat center center / cover; padding: 60px 50px; border: 12px solid #FFF">
-    <div class="card-body">
-        <div class="d-flex justify-content-between">
-            <h2 class="card-title text-white font-body">Subscribe to our Newsletter!</h2>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nisi beatae temporibus nobis optio eos?</p>
 
-        <div class="subscribe-widget" data-loader="button">
 
-            <div class="widget-subscribe-form-result"></div>
 
-            <form action="include/subscribe.php" role="form" method="post" class="mb-0">
-                <label for="widget-subscribe-form-email">Email Address <span>*</span></label>
-                <input type="email" name="widget-subscribe-form-email" id="widget-subscribe-form-email" class="form-control required not-dark" placeholder="name@email.com">
-                <button class="btn rounded btn-danger py-2 mt-3 btn-block uppercase ls1 t600" type="submit">Subscribe</button>
-            </form>
-
-        </div>
-    </div>
-</div>
-@endif
--->
 @foreach ($intros as $intro)
 <section id="slider" class="slider-element full-screen force-full-screen clearfix">
     <div class="full-screen force-full-screen"
         style="position: fixed; width: 100%; background: #FFF url('{{ asset($intro->image) }}') no-repeat  center; background-size: cover; background-attachment: fixed;">
 
         <div class="container clearfix">
-            <div class="slider-caption dark slider-caption-right">
-                <h2 class="font-primary ls5" data-animate="fadeIn">{{ $intro->title_ge }}</h2>
-                <p class="t300 ls1 d-none d-sm-block" data-animate="fadeIn" data-delay="400">{{ $intro->desc_ge }}.</p>
+            <div class="slider-caption  slider-caption-right">
+                {!! $intro->title !!}
+                <p class="t300 ls1 d-none d-sm-block" data-animate="fadeIn" data-delay="400">{!! $intro->desc !!}.</p>
                 <a class="font-primary noborder ls1 topmargin-sm inline-block more-link text-white dark d-none d-sm-inline-block"
-                    data-animate="fadeIn" data-delay="800" data-scrollto="#section-works" data-offset="0"
-                    href="#"><u>{{ $intro->link_ge }}</u> &rarr;</a>
+                    data-animate="fadeIn" data-delay="800" data-scrollto="#section-about" data-offset="0"
+                    href="#"><u>{!! $intro->button !!}</u> &rarr;</a>
             </div>
         </div>
 
@@ -55,28 +34,30 @@
         <div id="section-skills" class="section nomargin page-section dark nobg clearfix" style="padding-bottom: 50px">
             <div class="container clearfix">
                 <div class="heading-block">
-                    <h2 class="font-secondary center">My Experiments.</h2>
+                    <h2 class="font-secondary center">{{ __('My Experiments') }}</h2>
                 </div>
                 @foreach ($skills as $skill)
-                {{ $counter++ }}
+                @php
+                    $counter++
+                @endphp
                 @if($counter % 3 != 0)
                 <div class="col_one_third ">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon">
                             <a href="#"><img src="{{ asset($skill->image) }}" alt=""></a>
                         </div>
-                        <h3 class="t400 ls2" style="color: #FFF">{{ $skill->title_ge }}</h3>
-                        {!! $skill->desc_ge !!}
+                        <h3 class="t400 ls2" style="color: #FFF">{{ $skill->title }}</h3>
+                        {!! $skill->desc !!}
                     </div>
                 </div>
-                @else
+                @elseif($counter % 3 == 0)
                 <div class="col_one_third col_last">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon">
                             <a href="#"><img src="{{ asset($skill->image) }}" alt=""></a>
                         </div>
-                        <h3 class="t400 ls2" style="color: #FFF">{{ $skill->title_ge }}</h3>
-                        <p style="color:#AAA;">{!! $skill->desc_ge !!}</p>
+                        <h3 class="t800 ls2" style="color: #FFF">{{ $skill->title }}</h3>
+                        {!! $skill->desc !!}
                     </div>
                 </div>
 
@@ -95,45 +76,45 @@
             style="background:  url('{{ asset($about->image) }}') no-repeat center center; background-size: cover; padding: 100px 0">
             <div class="container clearfix">
                 <div class="row clearfix">
-                    <div class="col-md-5 offset-md-7 clearfix m-3">
-                        <div class="video-wrap">
+                    <div class="col-md-5 offset-md-7 clearfix col-sm-6 " style="padding : 30px;">
+                        <div class="video-wrap ">
                             <div class="video-overlay d-sm-block d-md-none"
                                 style="background: rgba(179, 173, 142, 0.815);">
                             </div>
                         </div>
                         <div class="heading-block">
-                            <h2 class="font-secondary">{{ $about->title_ge }}</h2>
-                            <span>{{ $about->desc_ge }}</span>
+                            <h2 class="font-secondary">{{ __('About Me') }}</h2>
+                            <span>{{ __('Check out small info about the upcoming developer') }}</span>
                         </div>
                         <table class=" table">
                             <tbody>
                                 <tr>
-                                    <td class="notopborder"><strong>Name:</strong></td>
-                                    <td class="notopborder">{{ $about->name_ge }}</td>
+                                    <td class="notopborder"><strong>{{ __('Name') }} :</strong></td>
+                                    <td class="notopborder">{!! $about->name !!}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Gender:</strong></td>
-                                    <td>{{ $about->gender_ge }}</td>
+                                    <td><strong>{{ __('Gender') }}:</strong></td>
+                                    <td>{!! $about->gender !!}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Email:</strong></td>
-                                    <td>{{ $about->email }}</td>
+                                    <td><strong>{{ __('Email') }}:</strong></td>
+                                    <td>{!! $about->email !!}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Phone:</strong></td>
-                                    <td>{{ $about->phone_number }}</td>
+                                    <td><strong>{{ __('Phone') }}:</strong></td>
+                                    <td>{!! $about->phone_number !!}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>DOB:</strong></td>
-                                    <td>{{ $about->birth_date_ge }}</td>
+                                    <td><strong>{{ __('DOB') }}:</strong></td>
+                                    <td>{!! $about->birth_date !!}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Nationality:</strong></td>
-                                    <td>{{ $about->nationality_ge }}</td>
+                                    <td><strong>{{ __('Nationality') }}:</strong></td>
+                                    <td>{!! $about->nationality !!}</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <a href="{{ route('pdf.download', app()->getLocale()) }}"
+                        <a href="{{ route('pdf.download',['locale' => app()->getLocale()]) }}"
                             class="button button-large button-border button-black button-dark noleftmargin"><i
                                 class="icon-line-cloud-download"></i> Download CV</a>
                     </div>
@@ -143,16 +124,16 @@
         </div>
         @endforeach
 
-        <div class="section nomargin skill-area bgcolor dark clearfix" style="padding: 80px 0;">
+        <div class="section nomargin skill-area  dark clearfix"  >
             <div class="container clearfix">
                 <div class="row clearfix">
 
                     <div class="col-lg-4 col-12">
-                        <h4>Skills</h4>
+                        <h4 style="color: rgba(131, 93, 202, 0.856)">{{ __('Skills') }}</h4>
                         <ul class="skills">
                             @foreach ($SS as $ss)
                             <li data-percent="{{ $ss->skills_int }}">
-                                <span>{{ $ss->skills_str_ge }}</span>
+                                <span>{!! $ss->skills_str !!}</span>
                                 <div class="progress">
                                     <div class="progress-percent">
                                         <div class="counter counter-inherit counter-instant"><span data-from="0"
@@ -169,104 +150,68 @@
 
                     @foreach ($facts as $fact)
                     <div class="col-lg-4 col-md-6">
-                        <h4>Education</h4>
+                        <h4 style="color: rgba(131, 93, 202, 0.856)">{{ __('Education') }}</h4>
                         <div class="skill-info">
-                            {{$fact->education_ge}}
+                            {!! $fact->education !!}
                         </div>
                     </div>
 
                     @endforeach
-                    <div class="w-100 bottommargin d-block d-md-none"></div>
 
                     <div class="col-lg-4 col-md-6">
-                        <h4>Experience</h4>
+                        <h4 style="color: rgba(131, 93, 202, 0.856)">{{ __('Experience') }}</h4>
                         <div class="skill-info">
-                            {{ $fact->experience_ge }}
+                            {!! $fact->experience !!}
                         </div>
                     </div>
 
                     <div class="w-100 bottommargin d-block d-lg-none clear"></div>
 
+                    
 
 
+
+                </div>
+                
+            </div>
+            <div class="video-wrap">
+                <div class="video-overlay d-block d-xl-none" style="background-image: linear-gradient( rgba(236, 230, 195, 0.856),  rgba(189, 225, 255, 0.801));">
                 </div>
             </div>
         </div>
 
         
         <div id="section-works" class="section page-section nomargin clearfix"
-           style="background: #EEE @foreach($works as $work)url('{{ asset($work->bg_img) }}') @endforeach no-repeat center right; background-size: cover; padding: 100px 0">
+         style=" background-image: url({{ asset('front/images/sections/background-clouds.jpg') }});
+        background-repeat: no-repeat; background-size: 100%; no-repeat center right; background-size: cover; padding: 100px 0">
             <div class="container clearfix">
                 <div class="row clearfix">
                     <div class="col-lg-5 offset-lg-1">
                         <div class="heading-block">
-                            @foreach ($works as $work)
-                            <h2 class="font-secondary">@if(!empty($work->title_ge)) {{$work->title_ge }}@endif</h2>
-                            <span class="notopmargin">@if(!empty($work->desc_ge)) {{$work->desc_ge }}@endif</span>
-                            @endforeach
+                            <h2 class="font-secondary">{{ __('Works') }}</h2>
+                            <span class="notopmargin">{{ __('Gaze upon my creations') }}</span>
+                           
                         </div>
                         <div class="row clearfix">
                             <div class="col-md-12">
                                 <ul class="niche-demos-lists nobottommargin lists-1">
                                     @foreach ($works as $work)
                                     <li><a href="demo-travel.html"><img src="{{ asset($work->image) }}"
-                                        alt="">{{ $work->work_ge }}</a></li>
+                                        alt="">{{ $work->work }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
                             
                         </div>
-                        <a href="#"
-                            class="button button-large button-border button-black button-dark topmargin-sm noleftmargin"><i
-                                class="icon-line-stack-2"></i> See More Works</a>
                     </div>
                 </div>
             </div>
             <div class="video-wrap">
-                <div class="video-overlay d-block d-xl-none" style="background: rgba(208, 235, 250, 0.678);">
+                <div class="video-overlay d-block d-xl-none" style="background: rgba(220, 250, 253, 0.562);">
                 </div>
             </div>
         </div>
         
-
-        <div id="section-articles" class="section page-section nomargin bgcolor clearfix" style="padding: 100px 0">
-            <div class="container clearfix">
-
-                <div class="dark">
-                    <div class="heading-block">
-                        <h2 class="font-secondary">Latest Articles.</h2>
-                        <span class="notopmargin">Lorem ipsum dolor sit amet.</span>
-                    </div>
-                </div>
-
-                <div id="posts" class="post-grid grid-3 clearfix">
-                    @foreach ($articles as $article)
-
-                    <div class="entry nobottomborder nobottompadding clearfix">
-                        <div class="entry-box-shadow">
-                            <div class="entry-image nobottommargin" height="150px">
-                                <a href="" data-lightbox="image"><img class="image_fade" width="150px"
-                                        src="{{ asset($article->image) }}" alt="Standard Post with Image"></a>
-                            </div>
-                            <div class="entry-meta-wrapper">
-                                <div class="entry-meta nomargin clearfix">
-                                    <a href="#"
-                                        class="text-muted">{{ date('M j, Y H:i', strtotime($article->created_at)) }}</a>
-                                </div>
-                                <div class="entry-title clearfix">
-                                    <h2><a href="#">{{ $article->title_ge }}</a></h2>
-                                </div>
-                                <div class="entry-content clearfix">
-                                    <p class="nobottommargin">{!! $article->body_ge !!}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-
-                </div>
-            </div>
-        </div>
 
         @foreach ($menuItems as $MenuItem)
         <div id="{{ $MenuItem->label }}" class="section page-section nomargin clearfix"
@@ -276,11 +221,11 @@
                     @if(!empty($MenuItem->image))
                     <div class="col-lg-5 offset-lg-1">
                         <div class="heading-block">
-                            <h2 class="font-secondary">{{ $MenuItem->title_ge }}</h2>
+                            <h2 class="font-secondary">{{ $MenuItem->title }}</h2>
                             <span class="notopmargin">.</span>
                         </div>
                         <div class="row clearfix">
-                            {{ $MenuItem->body_ge }}
+                            {{ $MenuItem->body }}
                         </div>
 
                     </div>
@@ -290,11 +235,11 @@
                     @else
                     <div class="col-lg-12 offset-lg-1">
                         <div class="heading-block">
-                            <h2 class="font-secondary">{{ $MenuItem->title_ge }}</h2>
+                            <h2 class="font-secondary">{{ $MenuItem->title }}</h2>
                             <span class="notopmargin">.</span>
                         </div>
                         <div class="row clearfix">
-                            {{ $MenuItem->body_ge }}
+                            {{ $MenuItem->body }}
                         </div>
 
                     </div>
@@ -308,23 +253,25 @@
         </div>
         @endforeach
 
-        <section class="section page-section nomargin clearfix ">
+        <section class="section page-section nomargin clearfix " id="contact" style="background-image: url({{ asset('front/images/sections/12345.jpg') }});
+                 background-repeat: no-repeat; background-size: 100%;">
             <div class="container">
                 <div class="row">
+                    <h2 class=" font-secondary center ">{{ __('Contact Form') }}</h2>
                     <div class="col-md-6">
-                        <form class="row" id="event-registration" action="{{ route('mail.send', app()->getLocale()) }}" method="POST">
+                        <form class="row" id="event-registration" action="{{ route('mail.send',['locale' => app()->getLocale()]) }}" method="POST">
                             @csrf
                             <div class="col-6 form-group">
-                                <label>Name:</label>
+                                <label>{{ __('Name') }}:</label>
                                 <input type="text" name="name"  class="form-control required" value="" placeholder="Enter your First Name">
                             </div>
                             <div class="col-12 form-group">
-                                <label>Email:</label>
+                                <label>{{ __('Email') }}:</label>
                                 <input type="email" name="email" id="event-registration-email" class="form-control required" value="" placeholder="Enter your Email Address">
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>Bio:</label>
+                                    <label>{{ __('Text') }}:</label>
                                     <textarea name="text"  class="form-control required" cols="30" rows="5"></textarea>
                                 </div>
                             </div>
@@ -335,6 +282,17 @@
                             <input type="hidden" name="prefix" value="event-registration-">
                         </form>
                     </div>
+                    <div class="col-md-6">
+                       <div class="center">
+                        <h3 class="font-secondary">{{ __('If you have any idea for a website, do not be shy') }}</h3> <br>
+                        <h2 class="font-secondary">{{ __('Lets Talk!') }}</h2>
+                       </div>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="video-wrap">
+                <div class="video-overlay d-block d-xl-none" style="background-image: linear-gradient(rgba(202, 232, 255, 0.445), #dfded96e, rgba(82, 70, 10, 0.082)   );">
                 </div>
             </div>
         </section>

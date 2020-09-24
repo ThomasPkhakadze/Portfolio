@@ -12,14 +12,7 @@
                
                 <div class="box-body">
                   <h2>ქართული</h2>
-                  <div class="form-group">
-                    <label for="title_ge">სათაური</label>
-                    <input type="text" class="form-control" name="title_ge" value="{{ $about->title_ge }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="desc_ge">აღწერა</label>
-                    <textarea name="desc_ge" class="textarea">{{ $about->desc_ge }}</textarea>
-                  </div>
+
                   <div class="form-group">
                     <label for="name_ge">სახელი</label>
                     <textarea name="name_ge" class="textarea">{{ $about->name_ge }}</textarea>
@@ -41,14 +34,7 @@
                   <hr>
             
                   <h2>ინგლისური</h2>
-                  <div class="form-group">
-                    <label for="title_en">სათაური</label>
-                    <input type="text" class="form-control" name="title_en" value="{{ $about->title_en }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="desc_en">აღწერა</label>
-                    <textarea name="desc_en" class="textarea">{{ $about->desc_en }}</textarea>
-                  </div>
+
                   <div class="form-group">
                     <label for="name_en">სახელი</label>
                     <textarea name="name_en" class="textarea">{{ $about->name_en }}</textarea>

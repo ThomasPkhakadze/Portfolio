@@ -75,7 +75,7 @@
                                         <tbody>
                                             @foreach ($menuItems as $menuItem)
                                             <tr>
-                                                <td>{{$menuItem->label}} </td>
+                                                <td>{{$menuItem->label_en}} </td>
                                                 <td>{!! $menuItem->title_en !!} </td>
                                                 <td>{!! $menuItem->body_en !!} </td>
                                                 <td>{!! $menuItem->bg_color !!} </td>
@@ -130,8 +130,8 @@
                             <div class="box-body">
                                 <h2>ინგლისური</h2>
                                 <div class="form-group">
-                                    <label for="label">დასახელება</label>
-                                    <input type="text" class="form-contdol" name="label" placeholder="მაგარი სერვისი">
+                                    <label for="label_en">დასახელება</label>
+                                    <input type="text" class="form-contdol" name="label_en" placeholder="მაგარი სერვისი">
                                 </div>
                                 <div class="form-group">
                                     <label for="title_en">სათაური</label>

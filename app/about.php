@@ -3,13 +3,53 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App;
 
-class about extends Model
+class About extends Model
 {
-    protected $fillable = ['title_ge', 'title_en', 'desc_ge', 'desc_en',
-                            'name_ge', 'name_en', 'gender_ge', 
+    protected $fillable = [ 'name_ge', 'name_en', 'gender_ge', 
                             'gender_en', 'birth_date_ge',
                             'birth_date_en', 'nationality_ge',
                              'nationality_en', 
                             'email', 'phone_number', 'image' ];
+
+
+    public function getNameAttribute()
+    {
+        $locale = App::getLocale();
+        $column = "name_" . $locale;
+        return $this->$column;
+    }
+
+    public function getGenderAttribute()
+    {
+        $locale = App::getLocale();
+        $column = "gender_" . $locale;
+        return $this->$column;
+    }
+
+    public function getDOBAttribute()
+    {
+        $locale = App::getLocale();
+        $column = "birth_date_" . $locale;
+        return $this->$column;
+    }
+
+    public function getNationalityAttribute()
+    {
+        $locale = App::getLocale();
+        $column = "nationality_" . $locale;
+        return $this->$column;
+    }
+
+    
+
+    
+                            
+
+
 }
+
+
+
+    

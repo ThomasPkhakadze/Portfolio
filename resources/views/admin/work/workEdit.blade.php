@@ -38,20 +38,14 @@
             <div class="col-lg-4">
         
                 <div class="form-group">
-                    <label for="image">სურათ</label>
+                    <label for="image">სურათი</label>
                     <input type="file" class="form-contdol" name="image">
                 </div>
-                <div class="form-group">
-                    <label for="bg_img">ფონი</label>
-                    <input type="file" class="form-contdol" name="bg_img" >
-                  </div>
+
                 <div width="150px">
                     <img src="{{ asset($work->image) }}" height="150px">
                 </div>
                 <hr>
-                <div width="150px">
-                    <img src="{{ asset($work->bg_img) }}" height="150px">
-                </div>
         
                 
                 <div class="box-footer m-4">

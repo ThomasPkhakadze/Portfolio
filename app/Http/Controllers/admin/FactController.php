@@ -39,11 +39,7 @@ class FactController extends Controller
             'education_ge' => 'required|string',
             'education_en' => 'required|string',
             'experience_ge' => 'required|string',
-            'experience_en' => 'required|string',
-            'skills_str_ge' => 'required|string',
-            'skills_str_en' => 'required|string',
-            'skills_int' => 'required|integer'
-
+            'experience_en' => 'required|string'
 
         ]);
 
@@ -53,9 +49,6 @@ class FactController extends Controller
         $fact->education_en = $request->education_en;
         $fact->experience_ge = $request->experience_ge;
         $fact->experience_en = $request->experience_en;
-        $fact->skills_str_ge = $request->skills_str_ge;
-        $fact->skills_str_en = $request->skills_str_en;
-        $fact->skills_int = $request->skills_int;
 
         $fact->save();
 
@@ -98,10 +91,8 @@ class FactController extends Controller
             'education_ge' => 'required|string',
             'education_en' => 'required|string',
             'experience_ge' => 'required|string',
-            'experience_en' => 'required|string',
-            'skills_str_ge' => 'required|string',
-            'skills_str_en' => 'required|string',
-            'skills_int' => 'required|integer'
+            'experience_en' => 'required|string'
+
 
 
         ]);
@@ -112,9 +103,6 @@ class FactController extends Controller
         $fact->education_en = $request->education_en;
         $fact->experience_ge = $request->experience_ge;
         $fact->experience_en = $request->experience_en;
-        $fact->skills_str_ge = $request->skills_str_ge;
-        $fact->skills_str_en = $request->skills_str_en;
-        $fact->skills_int = $request->skills_int;
 
         $fact->save();
 

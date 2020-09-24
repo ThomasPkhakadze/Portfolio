@@ -29,36 +29,28 @@
                   @foreach ($abouts as $about)
                   <table class="table table-bordered table-striped table-hover" id="Table">
                     <tr>
-                      <th>სათაური</th>
-                      <td>{{ $about->title_ge }}</td>
-                    </tr>
-                    <tr>
-                      <th>აღწერა</th>
-                      <td>{!! $about->desc_ge !!}</td>
-                    </tr>
-                    <tr>
                       <th>სახელი</th>
-                      <td>{{ $about->name_ge }}</td>
+                      <td>{!! $about->name_ge !!}</td>
                     </tr>
                     <tr>
                       <th>სქესი</th>
-                      <td>{{ $about->gender_ge }}</td>
+                      <td>{!! $about->gender_ge !!}</td>
                     </tr>
                     <tr>
                       <th>დაბადების თარიღი</th>
-                      <td>{{ $about->date_of_birth_ge }}</td>
+                      <td>{!! $about->date_of_birth_ge !!}</td>
                     </tr>
                     <tr>
                       <th>ეროვნება</th>
-                      <td>{{ $about->nationality_ge }}</td>
+                      <td>{!! $about->nationality_ge !!}</td>
                     </tr>
                     <tr>
                       <th>ელ-ფოსტა</th>
-                      <td>{{ $about->email }}</td>
+                      <td>{!! $about->email !!}</td>
                     </tr>
                     <tr>
                       <th>ტელ-ნომერი</th>
-                      <td>{{ $about->phone_number }}</td>
+                      <td>{!! $about->phone_number !!}</td>
                     </tr>
                     <tr>
                       <th>სურათი</th>
@@ -88,8 +80,6 @@
                 <div class="tab-pane" id="en">
                     <table class="table table-bordered table-striped" id="Table">
                       <thead>
-                        <th>სათაური</th>
-                        <th>აღწერა</th>
                         <th>სახელი</th>
                         <th>სქესი</th>
                         <th>დაბადების თარიღი</th>
@@ -150,14 +140,6 @@
             <div class="box-body">
               <h2>ქართული</h2>
               <div class="form-group">
-                <label for="title_ge">სათაური</label>
-                <input type="text" class="form-control" name="title_ge" placeholder="Enter title">
-              </div>
-              <div class="form-group">
-                <label for="desc_ge">აღწერა</label>
-                <textarea name="desc_ge" class="textarea"></textarea>
-              </div>
-              <div class="form-group">
                 <label for="name_ge">სახელი</label>
                 <textarea name="name_ge" class="textarea"></textarea>
               </div>
@@ -178,14 +160,7 @@
               <hr>
   
               <h2>ინგლისური</h2>
-              <div class="form-group">
-                <label for="title_en">სათაური</label>
-                <input type="text" class="form-control" name="title_en" placeholder="Enter title">
-              </div>
-              <div class="form-group">
-                <label for="desc_en">აღწერა</label>
-                <textarea name="desc_en" class="textarea"></textarea>
-              </div>
+
               <div class="form-group">
                 <label for="name_en">სახელი</label>
                 <textarea name="name_en" class="textarea"></textarea>

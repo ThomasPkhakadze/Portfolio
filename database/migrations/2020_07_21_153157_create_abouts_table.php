@@ -15,11 +15,6 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title_ge');
-            $table->string('title_en');
-
-            $table->string('desc_ge');
-            $table->string('desc_en');
 
             $table->string('name_ge');
             $table->string('name_en');

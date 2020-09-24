@@ -16,7 +16,7 @@ class CreateMenuItemsTable extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             //lable for multiple purposes, like data-href, id and label itself
-            $table->string('label');
+            $table->string('label_en');
             $table->string('label_ge');
             //section title
             $table->string('title_ge');

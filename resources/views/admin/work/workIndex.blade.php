@@ -76,10 +76,6 @@
 
                   <hr class="bg-primary">
 
-                  <div class="form-group">
-                    <label for="bg_img">საერთო ფონი</label>
-                    <input type="file" class="form-contdol" name="bg_img" >
-                  </div>
                   
                   <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>

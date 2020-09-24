@@ -112,7 +112,7 @@
 
 
 body,
-.dropdown-menu { font-size: 0.875rem; }
+.dropdown-menu { font-size: 1.875rem; }
 
 
 /* ----------------------------------------------------------------
@@ -10311,7 +10311,7 @@ body:not(.device-touch) .rounded-skill {
 	position: relative;
 	margin-top: 38px;
 	height: 4px;
-	background-color: #F5F5F5;
+	background-color: #ffffff;
 	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 	border-radius: 2px;
 }
@@ -10324,7 +10324,7 @@ body:not(.device-touch) .rounded-skill {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background-color: #1ABC9C;
+	background-color: #6910dddc;
 	overflow: visible !important;
 	border-radius: 2px;
 	-webkit-transition: width 1.2s ease-in-out;
@@ -10337,7 +10337,7 @@ body:not(.device-touch) .rounded-skill {
 	top: -28px;
 	right: 0;
 	background-color: #333;
-	color: #F9F9F9;
+	color: #6910dddc;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	height: 22px;
 	line-height: 22px;
@@ -11159,6 +11159,9 @@ form .col_five_sixth { margin-bottom: 25px; }
 	box-shadow: 0 1px 10px rgba(231, 27, 27, 0.884); 
 }
 
+.contact-space{
+	background-image: url('background-clouds.jpg');
+}
 #contact-form-overlay,
 #contact-form-overlay-mini {
 	position: relative;

@@ -24,7 +24,7 @@ class MenuItemsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'label' => 'required|string',
+            'label_en' => 'required|string',
             'label_ge' => 'required|string',
             'title_ge' => 'required|string',
             'title_en' => 'required|string',
@@ -36,7 +36,7 @@ class MenuItemsController extends Controller
 
         $mItem = new MenuItem;
 
-        $mItem->label = $request->label;
+        $mItem->label_en = $request->label_en;
         $mItem->label_ge = $request->label_ge;
         $mItem->title_ge = $request->title_ge;
         $mItem->title_en = $request->title_en;
@@ -62,7 +62,7 @@ class MenuItemsController extends Controller
     {
         $mItem = MenuItem::find($id);
         $this->validate($request,[
-            'label' => 'required|string',
+            'label_en' => 'required|string',
             'label_ge' => 'required|string',
             'title_ge' => 'required|string',
             'title_en' => 'required|string',
@@ -74,7 +74,7 @@ class MenuItemsController extends Controller
 
        
 
-        $mItem->label = $request->label;
+        $mItem->label_en = $request->label_en;
         $mItem->label_ge = $request->label_ge;
         $mItem->title_ge = $request->title_ge;
         $mItem->title_en = $request->title_en;

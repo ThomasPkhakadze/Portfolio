@@ -14,8 +14,7 @@
                     <h2>ქართული</h2>
                     <div class="form-group">
                         <label for="title_ge">სათაური</label>
-                        <input type="text" class="form-contdol" name="title_ge" placeholder="მაგარი სერვისი"
-                            value="{{ $intro->title_ge }}">
+                        <textarea name="title_ge" class="textarea">{{ $intro->title_ge }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="desc_ge">აღწერა</label>
@@ -33,8 +32,7 @@
                     <h2>ინგლისური</h2>
                     <div class="form-group">
                         <label for="title_en">სათაური</label>
-                        <input type="text" class="form-contdol" name="title_en" placeholder="მაგარი სერვისი"
-                            value="{{ $intro->title_en }}">
+                        <textarea name="title_en" class="textarea">{{ $intro->title_en }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="desc_en">აღწერა</label>

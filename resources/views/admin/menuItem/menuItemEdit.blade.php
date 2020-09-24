@@ -27,8 +27,8 @@
                         <div class="box-body">
                             <h2>ინგლისური</h2>
                             <div class="form-group">
-                                <label for="label">დასახელება</label>
-                                <input type="text" class="form-contdol" name="label" value="{{ $menuItem->label }}">
+                                <label for="label_en">დასახელება</label>
+                                <input type="text" class="form-contdol" name="label_en" value="{{ $menuItem->label }}">
                             </div>
                             <div class="form-group">
                                 <label for="title_en">სათაური</label>

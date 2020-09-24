@@ -34,20 +34,12 @@ class WorkController extends Controller
         $this->validate($request, [
             'work_ge' => 'required|string',
             'work_en' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'bg_img' => 'image|mimes:jpeg,png,jpg,gif,svg'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $work = new Work;
 
-        if(!empty($request->bg_img))
-        {
-            $Newfilename = time() . rand() . '.' . $request->file('bg_img')->extension();
-            $path = $request->file('bg_img')->move(public_path("images/"), $Newfilename);
-            $LastPath = "images/" . $Newfilename;
-            $request['bg_img'] = $LastPath;
-            $work->bg_img = $LastPath;
-        }
+       
         $work->work_ge = $request->work_ge;
         $work->work_en = $request->work_en;
 
@@ -95,8 +87,7 @@ class WorkController extends Controller
         $this->validate($request, [
             'work_ge' => 'required|string',
             'work_en' => 'required|string',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'bg_img' => 'image|mimes:jpeg,png,jpg,gif,svg'
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
         ]);
 
@@ -112,14 +103,6 @@ class WorkController extends Controller
             $lastPath = "images/" . $newfilename;
             $request['image'] = $lastPath;
             $work->image = $lastPath;
-        }
-        if(!empty($request->bg_img))
-        {
-            $Newfilename = time() . rand() . '.' . $request->file('bg_img')->extension();
-            $path = $request->file('bg_img')->move(public_path("images/"), $Newfilename);
-            $LastPath = "images/" . $Newfilename;
-            $request['bg_img'] = $LastPath;
-            $work->bg_img = $LastPath;
         }
 
         $work->save();

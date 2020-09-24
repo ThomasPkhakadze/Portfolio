@@ -21,13 +21,6 @@ class SliderSkillController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
- 
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -54,14 +47,6 @@ class SliderSkillController extends Controller
 
         return redirect()->route('SliderSkill.index');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    
 
     /**
      * Show the form for editing the specified resource.

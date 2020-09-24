@@ -22,6 +22,6 @@ class MailController extends Controller
         Mail::to('tom@tom.com')->send(new ContactForm($data));
 
         
-       return Redirect::to(url('#success'));
+       return Redirect::to(url('success'));
     }
 }
